@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block pageheading %}
+menu
+{% endblock %}
+
+{% block main %}
+    <div class="products">
+        <div class="product-box">
+            <h3 class="product-box-heading">Flat White</h3>
+            <p class="product-box-info">Definitely created in New Zealand (not in the West Island) - a classic. </p>
+            <img src="/static/images/images/flatwhite.jpg">
+            <p><strong>Size:</strong> 180mL</p>
+            <p><strong>Price:</strong> $4.00</p>
+        </div>
+
+        <div class="product-box">
+            <h3 class="product-box-heading">Latte</h3>
+            <p class="product-box-info">The New Zealand latte is larger than a flat white and has more foamy milk. </p>
+            <img src="/static/images/images/latte.jpg">
+            <p><strong>Size:</strong> 240mL</p>
+            <p><strong>Price:</strong> $4.00</p>
+        </div>
+
+        <div class="product-box">
+            <h3 class="product-box-heading">Espresso</h3>
+            <p class="product-box-info">Straight from the machine, 60mL including crema. </p>
+            <img src="/static/images/images/espresso.jpg">
+            <p><strong>Size:</strong> 60mL</p>
+            <p><strong>Price:</strong> $3.00</p>
+        </div>
+    </div>
+{% endblock %}
