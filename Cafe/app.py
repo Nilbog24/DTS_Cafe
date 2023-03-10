@@ -1,10 +1,12 @@
 import sqlite3
 from sqlite3 import Error
-
 from flask import Flask, render_template, request, redirect
+from flask_bcrypt import Bcrypt
 
 DATABASE = "C:/Users/brian/Documents/DTS_Cafe/smile.db"
 app = Flask(__name__)
+bcrypt = Bcrypt(app)
+app.secret_key = "2u9repokheij"
 
 
 def create_connection(db_file):
