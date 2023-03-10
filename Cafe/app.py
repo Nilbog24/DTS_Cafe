@@ -65,12 +65,13 @@ def render_signup():
         if len(password) < 8:
             return redirect("\signup?error=Password+must+be+at+least+8+characters")
 
+        hashed_password = bcrypt.generate_password_hash(password)
         con = create_connection(DATABASE)
         query = "INSERT INTO user(fname, lname, email, password) VALUES (?, ?, ?, ?)"
         cur = con.cursor()
 
         try:
-            cur.execute(query, (fname, lname, email, password))
+            cur.execute(query, (fname, lname, email, hashed_password))
         except sqlite3.IntegrityError:
             con.close()
             return redirect('\signup?error=Email+is+already+used')
